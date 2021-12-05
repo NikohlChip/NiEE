@@ -13,7 +13,7 @@ csvFile = open('ua.csv', 'a')
 #Use csv Writer
 csvWriter = csv.writer(csvFile)
 
-for tweet in tweepy.Cursor(api.search_tweets,q="#Einigkeit",count=100,lang="en",tweet_mode='extended').items():
+for tweet in tweepy.Cursor(api.search_tweets,q="#MeToo",count=100,lang="en",tweet_mode='extended').items():
     print (tweet.created_at, tweet.user.screen_name, tweet.full_text)
     csvWriter.writerow([tweet.created_at, tweet.full_text.encode('utf-8')])
     print('＝＝＝＝＝＝＝＝＝＝')
