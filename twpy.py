@@ -16,7 +16,7 @@ if __name__ == '__main__':
         #Use csv Writer
         csvWriter = csv.writer(csvFile)
 
-        for tweet in tweepy.Cursor(api.search_tweets,q='#ドーバー海峡 OR ＃ドーバー海峡',count=1500,tweet_mode='extended', result_type="mixed",include_entities=True).items():
+        for tweet in tweepy.Cursor(api.search_tweets,q='安倍晋三',count=1500,tweet_mode='extended', result_type="mixed",include_entities=True).items():
             if(tweet.user.screen_name == "_Nikohl"):
                 print(tweet.created_at, tweet.user.screen_name, tweet.full_text)
                 csvWriter.writerow([tweet.created_at, tweet.full_text])
